@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'webapp',
     'accounts',
     'api',
@@ -111,6 +112,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework.authentication.TokenAuthentication',
+
+    )
+
+}
 
 LOGIN_REDIRECT_URL = "webapp:index"
 LOGOUT_REDIRECT_URL = "webapp:index"
