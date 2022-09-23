@@ -26,7 +26,7 @@ class OrderViewSet(ModelViewSet):
     permission_classes = [IsAdminUser]
 
     def get_permissions(self):
-        if self.request.method == ['GET', 'POST']:
+        if self.request.method == ['POST']:
             return []
         return super().get_permissions()
 
